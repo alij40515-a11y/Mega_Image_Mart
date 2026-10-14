@@ -1,0 +1,338 @@
+‎<!DOCTYPE html>
+‎<html lang="ur" dir="rtl">
+‎<head>
+‎    <meta charset="UTF-8">
+‎    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+‎    <title>میگا امیج مارٹ - Mega Image Mart</title>
+‎    <!-- Tailwind CSS -->
+‎    <script src="https://cdn.tailwindcss.com"></script>
+‎    <!-- FontAwesome Icons -->
+‎    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+‎    <!-- Urdu Google Font -->
+‎    <link href="https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu:wght@400;700&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+‎    <style>
+‎        body {
+‎            font-family: 'Poppins', 'Noto Nastaliq Urdu', sans-serif;
+‎            background-color: #f8f9fa;
+‎        }
+‎        .bg-brand-red { background-color: #e31b23; }
+‎        .text-brand-red { color: #e31b23; }
+‎        .border-brand-red { border-color: #e31b23; }
+‎        .bg-brand-black { background-color: #121212; }
+‎        .hover-red:hover { background-color: #cc1118; }
+‎    </style>
+‎</head>
+‎<body class="bg-gray-100 text-gray-800 pb-20">
+‎
+‎    <!-- Top Announcement Bar -->
+‎    <div class="bg-brand-black text-white text-xs py-2 px-4 text-center border-b border-gray-800 flex justify-between items-center max-w-7xl mx-auto">
+‎        <span>📍 جمال آباد سنگوٹہ ضلع سوات</span>
+‎        <span class="hidden md:inline">🚚 1000 روپے کی خریداری پر ہوم ڈیلیوری سہولت</span>
+‎        <span>📞 03484272411</span>
+‎    </div>
+‎
+‎    <!-- Header / Banner -->
+‎    <header class="bg-brand-black text-white sticky top-0 z-50 shadow-md">
+‎        <div class="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center">
+‎            
+‎            <!-- Logo Section matching the Signboard -->
+‎            <div class="flex items-center space-x-3 space-x-reverse">
+‎                <div class="bg-brand-red p-2 rounded flex items-center justify-center w-12 h-12 shadow">
+‎                    <i class="fa-solid fa-cart-shopping text-white text-2xl"></i>
+‎                </div>
+‎                <div>
+‎                    <h1 class="text-2xl font-black tracking-wider text-white uppercase font-sans">MEGA IMAGE</h1>
+‎                    <p class="text-xs text-brand-red font-bold tracking-widest uppercase">MINI MART</p>
+‎                </div>
+‎            </div>
+‎
+‎            <!-- Contact Quick Links -->
+‎            <div class="hidden lg:flex items-center space-x-6 space-x-reverse text-sm">
+‎                <div class="flex items-center text-gray-300">
+‎                    <i class="fa-solid fa-phone text-brand-red ml-2"></i>
+‎                    <span>03484272411</span>
+‎                </div>
+‎                <a href="https://wa.me/923484272411" target="_blank" class="flex items-center bg-green-600 hover:bg-green-700 text-white px-3 py-1.5 rounded-full font-bold transition">
+‎                    <i class="fa-brands fa-whatsapp text-lg ml-1.5"></i>
+‎                    <span>واٹس ایپ آرڈر</span>
+‎                </a>
+‎            </div>
+‎
+‎            <!-- Cart Trigger Button -->
+‎            <button onclick="toggleCart()" class="relative bg-brand-red hover:bg-red-700 text-white px-4 py-2 rounded-lg font-bold flex items-center transition shadow">
+‎                <i class="fa-solid fa-basket-shopping text-lg ml-2"></i>
+‎                <span>ٹوکری</span>
+‎                <span id="cart-count" class="bg-white text-brand-red text-xs w-5 h-5 rounded-full flex items-center justify-center mr-2 font-bold">0</span>
+‎            </button>
+‎        </div>
+‎    </header>
+‎
+‎    <!-- Hero Banner -->
+‎    <section class="bg-gradient-to-r from-black via-gray-900 to-brand-black text-white py-12 px-4 border-b-4 border-brand-red">
+‎        <div class="max-w-7xl mx-auto text-center">
+‎            <span class="bg-brand-red text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">آن لائن ہوم ڈیلیوری</span>
+‎            <h2 class="text-3xl md:text-5xl font-bold mt-4 mb-2">میگا امیج مارٹ سنگوٹہ</h2>
+‎            <p class="text-gray-300 text-base md:text-lg max-w-2xl mx-auto">روزمرہ کا سامان، مشروبات، کاسمیٹکس اور دیگر اشیاء اب ایک کلک پر اپنے گھر منگوائیں۔</p>
+‎            
+‎            <!-- Features Badges -->
+‎            <div class="flex flex-wrap justify-center gap-4 mt-6 text-sm">
+‎                <div class="bg-gray-800 border border-gray-700 px-4 py-2 rounded-lg flex items-center">
+‎                    <i class="fa-solid fa-bolt text-yellow-400 ml-2"></i> تیز ترین ڈیلیوری
+‎                </div>
+‎                <div class="bg-gray-800 border border-gray-700 px-4 py-2 rounded-lg flex items-center">
+‎                    <i class="fa-solid fa-shield-halved text-green-400 ml-2"></i> معیاری مصنوعات
+‎                </div>
+‎                <div class="bg-gray-800 border border-gray-700 px-4 py-2 rounded-lg flex items-center">
+‎                    <i class="fa-solid fa-hand-holding-dollar text-brand-red ml-2"></i> مناسب قیمتیں
+‎                </div>
+‎            </div>
+‎        </div>
+‎    </section>
+‎
+‎    <!-- Main Content -->
+‎    <main class="max-w-7xl mx-auto px-4 py-8">
+‎        
+‎        <!-- Search and Filter Bar -->
+‎        <div class="bg-white p-4 rounded-xl shadow-sm mb-8 flex flex-col md:flex-row gap-4 justify-between items-center">
+‎            <!-- Search Input -->
+‎            <div class="relative w-full md:w-96">
+‎                <input type="text" id="search-input" onkeyup="filterProducts()" placeholder="سامان تلاش کریں..." class="w-full pl-4 pr-10 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-brand-red">
+‎                <i class="fa-solid fa-magnifying-glass absolute left-3 top-3 text-gray-400"></i>
+‎            </div>
+‎
+‎            <!-- Categories Tabs -->
+‎            <div class="flex flex-wrap gap-2 w-full md:w-auto overflow-x-auto pb-1">
+‎                <button onclick="setCategory('all')" class="cat-btn active bg-brand-red text-white px-4 py-2 rounded-lg text-sm font-bold shadow transition">سب مصنوعات</button>
+‎                <button onclick="setCategory('beverages')" class="cat-btn bg-white border border-gray-300 text-gray-700 hover:bg-gray-50 px-4 py-2 rounded-lg text-sm font-bold transition">مشروبات (Drinks)</button>
+‎                <button onclick="setCategory('cosmetics')" class="cat-btn bg-white border border-gray-300 text-gray-700 hover:bg-gray-50 px-4 py-2 rounded-lg text-sm font-bold transition">کاسمیٹکس</button>
+‎                <button onclick="setCategory('grocery')" class="cat-btn bg-white border border-gray-300 text-gray-700 hover:bg-gray-50 px-4 py-2 rounded-lg text-sm font-bold transition">گروسری</button>
+‎            </div>
+‎        </div>
+‎
+‎        <!-- Product Grid -->
+‎        <div id="product-grid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+‎            <!-- Products will be rendered dynamically by JS -->
+‎        </div>
+‎    </main>
+‎
+‎    <!-- Shopping Cart Modal Sidebar -->
+‎    <div id="cart-modal" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden flex justify-end">
+‎        <div class="bg-white w-full max-w-md h-full flex flex-col justify-between p-6 shadow-2xl">
+‎            <div>
+‎                <!-- Cart Header -->
+‎                <div class="flex justify-between items-center border-b pb-4 mb-4">
+‎                    <h3 class="text-xl font-bold text-gray-800 flex items-center">
+‎                        <i class="fa-solid fa-cart-flatbed text-brand-red ml-2"></i> آپ کی ٹوکری
+‎                    </h3>
+‎                    <button onclick="toggleCart()" class="text-gray-500 hover:text-red-600 text-2xl font-bold">&times;</button>
+‎                </div>
+‎
+‎                <!-- Cart Items List -->
+‎                <div id="cart-items" class="space-y-4 max-h-[50vh] overflow-y-auto pr-1">
+‎                    <!-- Cart items rendered here -->
+‎                </div>
+‎            </div>
+‎
+‎            <!-- Cart Footer -->
+‎            <div class="border-t pt-4">
+‎                <div class="flex justify-between items-center mb-4 text-lg font-bold">
+‎                    <span>کل رقم:</span>
+‎                    <span id="cart-total" class="text-brand-red">0 روپے</span>
+‎                </div>
+‎                
+‎                <!-- Order Form -->
+‎                <div class="space-y-3 mb-4">
+‎                    <input type="text" id="cust-name" placeholder="آپ کا نام" class="w-full p-2 border rounded text-sm focus:outline-none focus:border-brand-red">
+‎                    <input type="text" id="cust-address" placeholder="ڈیلیوری کا پتہ (مثلاً جمال آباد)" class="w-full p-2 border rounded text-sm focus:outline-none focus:border-brand-red">
+‎                </div>
+‎
+‎                <button onclick="sendWhatsAppOrder()" class="w-full bg-green-600 hover:bg-green-700 text-white py-3 rounded-lg font-bold flex items-center justify-center space-x-2 space-x-reverse transition shadow-lg">
+‎                    <i class="fa-brands fa-whatsapp text-2xl"></i>
+‎                    <span>واٹس ایپ پر آرڈر بھیجیں</span>
+‎                </button>
+‎            </div>
+‎        </div>
+‎    </div>
+‎
+‎    <!-- Footer -->
+‎    <footer class="bg-brand-black text-white mt-12 border-t-4 border-brand-red">
+‎        <div class="max-w-7xl mx-auto px-4 py-8 grid grid-cols-1 md:grid-cols-3 gap-8">
+‎            <div>
+‎                <h3 class="text-xl font-bold text-brand-red mb-2 uppercase">MEGA IMAGE MART</h3>
+‎                <p class="text-gray-400 text-sm">جمال آباد سنگوٹہ سوات میں معیاری اشیاء اور ہوم ڈیلیوری کی بہترین سہولت۔</p>
+‎            </div>
+‎            <div>
+‎                <h4 class="font-bold text-white mb-2">رابطہ کی تفصیلات</h4>
+‎                <p class="text-gray-400 text-sm mb-1"><i class="fa-solid fa-location-dot text-brand-red ml-2"></i> جمال آباد سنگوٹہ ضلع سوات</p>
+‎                <p class="text-gray-400 text-sm mb-1"><i class="fa-solid fa-phone text-brand-red ml-2"></i> 03484272411</p>
+‎                <p class="text-gray-400 text-sm"><i class="fa-brands fa-whatsapp text-green-500 ml-2"></i> 03484272411</p>
+‎            </div>
+‎            <div>
+‎                <h4 class="font-bold text-white mb-2">کام کے اوقات</h4>
+‎                <p class="text-gray-400 text-sm">ہفتے کے 7 دن کھلی ہے</p>
+‎                <p class="text-gray-400 text-sm">صبح 8:00 سے رات 12:00 تک</p>
+‎            </div>
+‎        </div>
+‎        <div class="bg-gray-950 text-center text-xs text-gray-500 py-4 border-t border-gray-800">
+‎            © 2026 Mega Image Mart - All Rights Reserved
+‎        </div>
+‎    </footer>
+‎
+‎    <!-- JavaScript logic -->
+‎    <script>
+‎        // Sample Products Array
+‎        const products = [
+‎            { id: 1, name: "کوکاکولا ۱.۵ لیٹر", category: "beverages", price: 180, image: "https://images.unsplash.com/photo-1622483767028-3f66f32aef97?w=500&q=80" },
+‎            { id: 2, name: "پیپسی ۱.۵ لیٹر", category: "beverages", price: 180, image: "https://images.unsplash.com/photo-1553456558-aff63285bdd1?w=500&q=80" },
+‎            { id: 3, name: "نیویا فیس واش", category: "cosmetics", price: 450, image: "https://images.unsplash.com/photo-1556228720-195a672e8a03?w=500&q=80" },
+‎            { id: 4, name: "ڈوو شیمپو 200ml", category: "cosmetics", price: 380, image: "https://images.unsplash.com/photo-1535585209827-a15fcdbc4c2d?w=500&q=80" },
+‎            { id: 5, name: "چائے کی پتی 400g", category: "grocery", price: 520, image: "https://images.unsplash.com/photo-1576092768241-dec231879fc3?w=500&q=80" },
+‎            { id: 6, name: "کوکنگ آئل 1 لیٹر", category: "grocery", price: 500, image: "https://images.unsplash.com/photo-1474979266404-7eaacbcd87c5?w=500&q=80" }
+‎        ];
+‎
+‎        let cart = [];
+‎        let currentCategory = 'all';
+‎
+‎        function renderProducts() {
+‎            const grid = document.getElementById('product-grid');
+‎            grid.innerHTML = '';
+‎            
+‎            const searchVal = document.getElementById('search-input').value.toLowerCase();
+‎
+‎            const filtered = products.filter(p => {
+‎                const matchesCat = (currentCategory === 'all' || p.category === currentCategory);
+‎                const matchesSearch = p.name.toLowerCase().includes(searchVal);
+‎                return matchesCat && matchesSearch;
+‎            });
+‎
+‎            if(filtered.length === 0) {
+‎                grid.innerHTML = `<div class="col-span-full text-center py-12 text-gray-500">کوئی پروڈکٹ نہیں ملی</div>`;
+‎                return;
+‎            }
+‎
+‎            filtered.forEach(product => {
+‎                grid.innerHTML += `
+‎                    <div class="bg-white rounded-xl shadow-sm hover:shadow-md transition overflow-hidden border border-gray-200 flex flex-col justify-between">
+‎                        <img src="${product.image}" alt="${product.name}" class="w-full h-48 object-cover">
+‎                        <div class="p-4 flex-1 flex flex-col justify-between">
+‎                            <div>
+‎                                <h3 class="font-bold text-gray-800 text-lg mb-1">${product.name}</h3>
+‎                                <p class="text-brand-red font-bold text-xl mb-4">${product.price} روپے</p>
+‎                            </div>
+‎                            <button onclick="addToCart(${product.id})" class="w-full bg-brand-black hover:bg-brand-red text-white py-2 rounded-lg font-bold transition flex items-center justify-center">
+‎                                <i class="fa-solid fa-plus ml-2"></i> ٹوکری میں شامل کریں
+‎                            </button>
+‎                        </div>
+‎                    </div>
+‎                `;
+‎            });
+‎        }
+‎
+‎        function setCategory(cat) {
+‎            currentCategory = cat;
+‎            document.querySelectorAll('.cat-btn').forEach(btn => {
+‎                btn.classList.remove('bg-brand-red', 'text-white');
+‎                btn.classList.add('bg-white', 'text-gray-700');
+‎            });
+‎            event.target.classList.add('bg-brand-red', 'text-white');
+‎            renderProducts();
+‎        }
+‎
+‎        function filterProducts() {
+‎            renderProducts();
+‎        }
+‎
+‎        function addToCart(id) {
+‎            const item = products.find(p => p.id === id);
+‎            const inCart = cart.find(c => c.id === id);
+‎            if(inCart) {
+‎                inCart.qty++;
+‎            } else {
+‎                cart.push({...item, qty: 1});
+‎            }
+‎            updateCart();
+‎        }
+‎
+‎        function updateCart() {
+‎            const cartItems = document.getElementById('cart-items');
+‎            const cartCount = document.getElementById('cart-count');
+‎            const cartTotal = document.getElementById('cart-total');
+‎
+‎            cartItems.innerHTML = '';
+‎            let total = 0;
+‎            let count = 0;
+‎
+‎            cart.forEach(item => {
+‎                total += item.price * item.qty;
+‎                count += item.qty;
+‎                cartItems.innerHTML += `
+‎                    <div class="flex justify-between items-center border-b pb-2">
+‎                        <div>
+‎                            <h4 class="font-bold text-sm">${item.name}</h4>
+‎                            <p class="text-xs text-gray-500">${item.price} x ${item.qty} = ${item.price * item.qty} روپے</p>
+‎                        </div>
+‎                        <div class="flex items-center space-x-2 space-x-reverse">
+‎                            <button onclick="changeQty(${item.id}, -1)" class="bg-gray-200 px-2 rounded font-bold">-</button>
+‎                            <span class="text-sm font-bold">${item.qty}</span>
+‎                            <button onclick="changeQty(${item.id}, 1)" class="bg-gray-200 px-2 rounded font-bold">+</button>
+‎                        </div>
+‎                    </div>
+‎                `;
+‎            });
+‎
+‎            cartCount.innerText = count;
+‎            cartTotal.innerText = total + " روپے";
+‎        }
+‎
+‎        function changeQty(id, change) {
+‎            const item = cart.find(c => c.id === id);
+‎            if(item) {
+‎                item.qty += change;
+‎                if(item.qty <= 0) {
+‎                    cart = cart.filter(c => c.id !== id);
+‎                }
+‎            }
+‎            updateCart();
+‎        }
+‎
+‎        function toggleCart() {
+‎            const modal = document.getElementById('cart-modal');
+‎            modal.classList.toggle('hidden');
+‎        }
+‎
+‎        function sendWhatsAppOrder() {
+‎            if(cart.length === 0) {
+‎                alert("براہ کرم پہلے کچھ سامان ٹوکری میں شامل کریں!");
+‎                return;
+‎            }
+‎
+‎            const name = document.getElementById('cust-name').value;
+‎            const address = document.getElementById('cust-address').value;
+‎
+‎            if(!name || !address) {
+‎                alert("براہ کرم اپنا نام اور پتہ درج کریں!");
+‎                return;
+‎            }
+‎
+‎            let message = `السلام علیکم! میں *میگا امیج مارٹ* سے آن لائن آرڈر کرنا چاہتا ہوں:\n\n`;
+‎            message += `👤 *نام:* ${name}\n📍 *پتہ:* ${address}\n\n🛒 *سامان کی فہرست:*\n`;
+‎
+‎            let total = 0;
+‎            cart.forEach((item, index) => {
+‎                message += `${index + 1}. ${item.name} (${item.qty} عدد) - ${item.price * item.qty} روپے\n`;
+‎                total += item.price * item.qty;
+‎            });
+‎
+‎            message += `\n💰 *کل رقم:* ${total} روپے`;
+‎
+‎            const phone = "923484272411";
+‎            const url = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
+‎            window.open(url, '_blank');
+‎        }
+‎
+‎        // Initial Render
+‎        renderProducts();
+‎    </script>
+‎</body>
+‎</html>
+‎
